@@ -409,10 +409,12 @@ char *yytext;
 #define INITIAL 0
 #line 2 "file1.l"
     #include<stdio.h>
-    int nb_ligne = 1;
+    #include "syntax.tab.h"
+
     int err = 0;
+    int nb_ligne = 1;
     int nb_colonne = 1;
-#line 416 "lex.yy.c"
+#line 418 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -563,10 +565,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 15 "file1.l"
+#line 17 "file1.l"
 
 
-#line 570 "lex.yy.c"
+#line 572 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -651,172 +653,174 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 17 "file1.l"
-printf("MC_Declaration\t\t(ligne %d)\n", nb_ligne);
+#line 19 "file1.l"
+printf("MC_DECLARATION\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 "file1.l"
-printf("MC_Code\t\t(ligne %d)\n", nb_ligne);
+#line 20 "file1.l"
+printf("MC_CODE\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 19 "file1.l"
-printf("MC_End\t\t(ligne %d)\n", nb_ligne);
+#line 21 "file1.l"
+printf("MC_END\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "file1.l"
+#line 22 "file1.l"
 printf("MC_IF\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 21 "file1.l"
-printf("MC_Do\t\t(ligne %d)\n", nb_ligne);
+#line 23 "file1.l"
+printf("MC_DO\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 22 "file1.l"
-printf("MC_Print\t\t(ligne %d)\n", nb_ligne);
+#line 24 "file1.l"
+printf("MC_PRINT\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 23 "file1.l"
-printf("TYPE: int\t\t(ligne %d)\n", nb_ligne);
+#line 25 "file1.l"
+printf("TYPE_INT\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 24 "file1.l"
-printf("TYPE: flot\t\t(ligne %d)\n", nb_ligne);
+#line 26 "file1.l"
+printf("TYPE_FLOT\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 26 "file1.l"
-printf("CHAINE: %s\t\t(ligne %d)\n", yytext, nb_ligne);
+#line 28 "file1.l"
+printf("CHAINE : %s\t\t(ligne %d)\n", yytext, nb_ligne);
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 27 "file1.l"
-printf("CST_REEL: %s\t\t(ligne %d)\n", yytext, nb_ligne);
+#line 29 "file1.l"
+printf("CST_REEL : %s\t\t(ligne %d)\n", yytext, nb_ligne);
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 28 "file1.l"
-printf("CST_INT: %s\t\t(ligne %d)\n", yytext, nb_ligne);
+#line 30 "file1.l"
+printf("CST_INT : %s\t\t(ligne %d)\n", yytext, nb_ligne);
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 29 "file1.l"
-printf("IDF: %s\t\t(ligne %d)\n", yytext, nb_ligne );
+#line 31 "file1.l"
+printf("IDF : %s\t\t(ligne %d)\n", yytext, nb_ligne );
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 31 "file1.l"
+#line 33 "file1.l"
 printf("OP_AFF\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 32 "file1.l"
+#line 34 "file1.l"
 printf("OP_COMP_SUP\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 33 "file1.l"
+#line 35 "file1.l"
 printf("OP_COMP_INF\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 34 "file1.l"
-printf("OP_Comp_SupEqual\t\t(ligne %d)\n", nb_ligne);
+#line 36 "file1.l"
+printf("OP_Comp_Sup_EQ\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 35 "file1.l"
-printf("OP_equal\t\t(ligne %d)\n", nb_ligne);
+#line 37 "file1.l"
+printf("OP_EQUAL\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 36 "file1.l"
-printf("OP_diff\t\t(ligne %d)\n", nb_ligne);
+#line 38 "file1.l"
+printf("OP_DIFF\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 37 "file1.l"
+#line 39 "file1.l"
 printf("OP_ADD\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 38 "file1.l"
+#line 40 "file1.l"
 printf("OP_SUB\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 39 "file1.l"
+#line 41 "file1.l"
 printf("OP_MUL\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 40 "file1.l"
+#line 42 "file1.l"
 printf("OP_DIV\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 42 "file1.l"
+#line 44 "file1.l"
 printf("ACCOLADE_OUV\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 43 "file1.l"
+#line 45 "file1.l"
 printf("ACCOLADE_FER\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 44 "file1.l"
+#line 46 "file1.l"
 printf("PARENTHESE_OUV\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 45 "file1.l"
+#line 47 "file1.l"
 printf("PARENTHESE_FER\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 46 "file1.l"
+#line 48 "file1.l"
 printf("PVG\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 47 "file1.l"
+#line 49 "file1.l"
 printf("VIRGULE\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 48 "file1.l"
+#line 50 "file1.l"
 printf("DEUX_POINTS\t\t(ligne %d)\n", nb_ligne);
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 50 "file1.l"
+#line 52 "file1.l"
 {nb_colonne++;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 51 "file1.l"
+#line 53 "file1.l"
 {nb_ligne++;}
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 54 "file1.l"
+{ printf("FIN_FICHIER\t\t(ligne %d)\n", nb_ligne); return 0; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 52 "file1.l"
-printf("erreur lexicale a la ligne %d\n", nb_ligne);
+#line 55 "file1.l"
+printf("erreur lexicale a la ligne %d\n", nb_ligne); err++;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 54 "file1.l"
+#line 57 "file1.l"
 ECHO;
 	YY_BREAK
-#line 818 "lex.yy.c"
-case YY_STATE_EOF(INITIAL):
-	yyterminate();
+#line 824 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1700,14 +1704,9 @@ int main()
 	return 0;
 	}
 #endif
-#line 54 "file1.l"
+#line 57 "file1.l"
 
 
-int main()
-{
-    yylex();
-    return 0;
-}
 
 int yywrap() {
     return 1;
